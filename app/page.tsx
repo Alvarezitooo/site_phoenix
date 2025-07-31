@@ -1,17 +1,17 @@
-import HeroSection from '@/components/sections/HeroSection';
+import HonestHeroSection from '@/components/sections/HonestHeroSection';
+import WhyNowSection from '@/components/sections/WhyNowSection';
 import EcosystemSection from '@/components/sections/EcosystemSection';
-import StorySection from '@/components/sections/StorySection';
-import EthicsSection from '@/components/sections/EthicsSection';
-import CTASection from '@/components/sections/CTASection';
+import HonestMetricsSection from '@/components/sections/HonestMetricsSection';
+import AuthenticTestimonialsSection from '@/components/sections/AuthenticTestimonialsSection';
 
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <HeroSection />
+      <HonestHeroSection />
+      <WhyNowSection />
       <EcosystemSection />
-      <StorySection />
-      <EthicsSection />
-      <CTASection />
+      <HonestMetricsSection />
+      <AuthenticTestimonialsSection />
     </div>
   );
 }

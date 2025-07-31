@@ -39,8 +39,8 @@ export default function Header() {
           {/* CTA Desktop */}
           <div className="hidden md:flex">
             <Button asChild className="bg-orange-500 hover:bg-orange-600">
-              <a href="https://phoenix-letters.streamlit.app/" target="_blank" rel="noopener noreferrer">
-                Essayer gratuitement
+              <a href="https://phoenix-creator.netlify.app/" target="_blank" rel="noopener noreferrer">
+                Commencer gratuitement
               </a>
             </Button>
           </div>
@@ -91,8 +91,8 @@ export default function Header() {
                 Contact
               </Link>
               <Button asChild className="bg-orange-500 hover:bg-orange-600 mt-4">
-                <a href="https://phoenix-letters.streamlit.app/" target="_blank" rel="noopener noreferrer">
-                  Essayer gratuitement
+                <a href="https://phoenix-creator.netlify.app/" target="_blank" rel="noopener noreferrer">
+                  Commencer gratuitement
                 </a>
               </Button>
             </nav>

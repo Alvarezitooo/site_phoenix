@@ -50,9 +50,9 @@ export default function EcosystemSection() {
                   Analyse de compatibilité offre/profil
                 </li>
               </ul>
-              <Link href="https://phoenix-creator.netlify.app/" target="_blank">
+              <Link href="https://phoenix-cv.streamlit.app/" target="_blank">
                 <Button className="w-full bg-blue-500 hover:bg-blue-600">
-                  Tester la béta
+                  Accéder à la Bêta
                 </Button>
               </Link>
             </CardContent>
@@ -144,7 +144,7 @@ export default function EcosystemSection() {
               Plus Vous Utilisez, Plus C'est Puissant
             </h3>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Phoenix n'est pas juste une collection d'outils séparés. C'est un <strong>écosystème intelligent</strong> où chaque application nourrit les autres, créant un cercle vertueux qui devient plus performant à chaque utilisation.
+              Phoenix n'est pas une simple collection d'outils. C'est un <strong>écosystème vivant</strong>, orchestré par notre <strong>Agent IA Data Flywheel</strong>. Cet agent tisse un lien invisible entre les applications, transformant vos données en un cercle vertueux de performance. Chaque action dans une application enrichit intelligemment les autres.
             </p>
           </div>
 
@@ -282,10 +282,10 @@ export default function EcosystemSection() {
               Découvrez l'Effet Phoenix
             </h4>
             <p className="text-lg text-gray-600 mb-6">
-              Commencez gratuitement avec Phoenix CV. Plus vous utilisez l'écosystème, plus il devient puissant.
+              Commencez gratuitement avec Phoenix Letters. Plus vous utilisez l'écosystème, plus il devient puissant.
             </p>
-            <Link href="https://phoenix-creator.netlify.app/" target="_blank">
-              <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white px-8 py-3 text-lg">
+            <Link href="https://phoenix-letters.streamlit.app/" target="_blank">
+              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-purple-500 hover:from-orange-600 hover:to-purple-600 text-white px-8 py-3 text-lg">
                 Commencer maintenant →
               </Button>
             </Link>

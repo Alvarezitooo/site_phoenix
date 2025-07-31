@@ -10,26 +10,12 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-                Né de l'expérience, 
-                <span className="text-orange-500"> construit pour vous</span>
+                Phoenix : Né de MA reconversion,
+                <span className="text-purple-700"> construit AVEC vous</span>
               </h1>
               <div className="prose prose-lg text-slate-600 space-y-4">
                 <p>
-                  Je m'appelle Matthieu. Après des années en tant qu'aide-soignant en EHPAD et MAS, 
-                  j'ai vécu moi-même le défi de la reconversion vers la tech.
-                </p>
-                <p>
-                  Cette transition n'a pas été simple. Les lettres de motivation génériques, 
-                  les CV qui ne reflétaient pas ma vraie valeur, les entretiens où je peinais 
-                  à expliquer pourquoi mon parcours atypique était un atout...
-                </p>
-                <p className="font-semibold text-slate-900">
-                  Phoenix est né de cette épreuve : j'ai créé les outils que j'aurais rêvé d'avoir.
-                </p>
-                <p>
-                  Aujourd'hui, Phoenix aide des centaines de personnes à transformer leur parcours 
-                  unique en force motrice pour leur nouvelle carrière. Parce que chaque reconversion 
-                  mérite d'être racontée avec justesse et impact.
+                  Phoenix est né de MA reconversion aide-soignant → tech. Je construis les outils que j'aurais voulu avoir. Vous êtes mes premiers beta-testeurs, aidez-moi à les perfectionner ensemble.
                 </p>
               </div>
             </div>
@@ -51,25 +37,23 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Notre Mission */}
+        {/* Notre Mission & Vision (Authentique) */}
         <section className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Notre Mission</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Notre Mission & Vision</h2>
             <div className="max-w-4xl mx-auto">
               <p className="text-xl text-slate-600 leading-relaxed">
-                Créer un écosystème d'outils IA éthiques pour les reconversions professionnelles, 
-                avec un modèle économique viable qui permet d'aider réellement tout en sortant 
-                le créateur de la précarité.
+                Notre mission est simple : vous accompagner, vous, les reconvertis, avec des outils IA éthiques et accessibles.
+                <br />
+                Notre vision est de construire, ensemble, la référence de la reconversion professionnelle.
               </p>
             </div>
           </div>
-          <div className="bg-orange-50 rounded-2xl p-8 border border-orange-100">
+          <div className="bg-purple-50 rounded-2xl p-8 border border-purple-100">
             <div className="text-center">
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Notre Vision</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">🎯 Objectif 2025 : 1000 Reconversions Ensemble !</h3>
               <p className="text-lg text-slate-700 max-w-3xl mx-auto">
-                Un monde où chaque personne en reconversion dispose des outils nécessaires 
-                pour valoriser son parcours unique et réussir sa transition professionnelle, 
-                quel que soit son background ou sa situation financière.
+                Chaque succès est le nôtre. Rejoignez l'aventure et aidons-nous mutuellement à atteindre nos objectifs.
               </p>
             </div>
           </div>
@@ -86,8 +70,8 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="text-center p-6 hover:shadow-lg transition-shadow">
               <CardContent className="pt-6">
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-8 w-8 text-orange-500" />
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="h-8 w-8 text-purple-500" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">Éthique</h3>
                 <p className="text-slate-600">
@@ -98,8 +82,8 @@ export default function AboutPage() {
 
             <Card className="text-center p-6 hover:shadow-lg transition-shadow">
               <CardContent className="pt-6">
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="h-8 w-8 text-orange-500" />
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Heart className="h-8 w-8 text-purple-500" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">Bienveillance</h3>
                 <p className="text-slate-600">
@@ -110,8 +94,8 @@ export default function AboutPage() {
 
             <Card className="text-center p-6 hover:shadow-lg transition-shadow">
               <CardContent className="pt-6">
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Eye className="h-8 w-8 text-orange-500" />
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Eye className="h-8 w-8 text-purple-500" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">Transparence</h3>
                 <p className="text-slate-600">
@@ -122,8 +106,8 @@ export default function AboutPage() {
 
             <Card className="text-center p-6 hover:shadow-lg transition-shadow">
               <CardContent className="pt-6">
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="h-8 w-8 text-orange-500" />
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Zap className="h-8 w-8 text-purple-500" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-2">Efficacité</h3>
                 <p className="text-slate-600">
