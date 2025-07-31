@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Zap } from 'lucide-react';
+import GreenAIBadge from '@/components/green/GreenAIBadge';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,6 +29,9 @@ export default function Header() {
             <Link href="/pricing" className="text-slate-600 hover:text-slate-900 transition-colors">
               Tarifs
             </Link>
+            <Link href="/green-ai" className="text-slate-600 hover:text-slate-900 transition-colors">
+              Green AI
+            </Link>
             <Link href="/about" className="text-slate-600 hover:text-slate-900 transition-colors">
               À propos
             </Link>
@@ -36,10 +40,11 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* CTA Desktop */}
-          <div className="hidden md:flex">
+          {/* Green AI Badge + CTA Desktop */}
+          <div className="hidden md:flex items-center space-x-4">
+            <GreenAIBadge variant="compact" />
             <Button asChild className="bg-orange-500 hover:bg-orange-600">
-              <a href="https://phoenix-creator.netlify.app/" target="_blank" rel="noopener noreferrer">
+              <a href="https://phoenix-letters.streamlit.app/" target="_blank" rel="noopener noreferrer">
                 Commencer gratuitement
               </a>
             </Button>
@@ -77,6 +82,13 @@ export default function Header() {
                 Tarifs
               </Link>
               <Link 
+                href="/green-ai" 
+                className="text-slate-600 hover:text-slate-900 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Green AI
+              </Link>
+              <Link 
                 href="/about" 
                 className="text-slate-600 hover:text-slate-900 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
@@ -90,11 +102,14 @@ export default function Header() {
               >
                 Contact
               </Link>
-              <Button asChild className="bg-orange-500 hover:bg-orange-600 mt-4">
-                <a href="https://phoenix-creator.netlify.app/" target="_blank" rel="noopener noreferrer">
-                  Commencer gratuitement
-                </a>
-              </Button>
+              <div className="mt-4 space-y-3">
+                <GreenAIBadge variant="compact" />
+                <Button asChild className="bg-orange-500 hover:bg-orange-600 w-full">
+                  <a href="https://phoenix-letters.streamlit.app/" target="_blank" rel="noopener noreferrer">
+                    Commencer gratuitement
+                  </a>
+                </Button>
+              </div>
             </nav>
           </div>
         )}
