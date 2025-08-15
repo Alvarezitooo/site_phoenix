@@ -55,8 +55,10 @@ export class PhoenixWebsiteAuth {
   async signUp(email: string, password: string, metadata?: any): Promise<PhoenixUser | null> {
     try {
       // Appel au webhook n8n pour gérer l'inscription
-      const n8nWebhookUrl = process.env.NEXT_PUBLIC_N8N_WEBHOOK_SIGNUP || 'http://localhost:5678/webhook/phoenix-signup';
-      
+      const n8nWebhookUrl =
+        process.env.NEXT_PUBLIC_N8N_WEBHOOK_SIGNUP ||
+        'http://localhost:5678/webhook/phoenix-signup';
+
       const response = await fetch(n8nWebhookUrl, {
         method: 'POST',
         headers: {
@@ -80,12 +82,12 @@ export class PhoenixWebsiteAuth {
       }
 
       const result = await response.json();
-      
+
       if (result.success && result.user) {
         return this.transformN8NUserToPhoenix(result.user);
       }
 
-      throw new Error(result.error || 'Erreur lors de l\'inscription');
+      throw new Error(result.error || "Erreur lors de l'inscription");
     } catch (error) {
       console.error('Phoenix signup via n8n error:', error);
       throw error;
@@ -175,12 +177,14 @@ export class PhoenixWebsiteAuth {
     return crossAppToken;
   }
 
-  // Redirection SSO cross-app sécurisée  
+  // Redirection SSO cross-app sécurisée
   async redirectToApp(app: 'letters' | 'cv' | 'rise', userData?: any): Promise<void> {
     try {
       // Récupération session utilisateur actuelle
-      const { data: { session } } = await supabase.auth.getSession();
-      
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+
       if (!session) {
         throw new Error('Aucune session active - reconnexion requise');
       }
@@ -192,23 +196,23 @@ export class PhoenixWebsiteAuth {
         user_tier: session.user.app_metadata?.subscription_tier || 'free',
         full_name: session.user.user_metadata?.full_name || '',
         source_app: 'website',
-        ...userData
+        ...userData,
       };
 
       // URLs des applications
       const urls = {
-        letters: process.env.NEXT_PUBLIC_PHOENIX_LETTERS_URL || 'https://phoenix-letters.streamlit.app',
-        cv: process.env.NEXT_PUBLIC_PHOENIX_CV_URL || 'https://phoenix-cv.streamlit.app', 
+        letters:
+          process.env.NEXT_PUBLIC_PHOENIX_LETTERS_URL || 'https://phoenix-letters.streamlit.app',
+        cv: process.env.NEXT_PUBLIC_PHOENIX_CV_URL || 'https://phoenix-cv.streamlit.app',
         rise: process.env.NEXT_PUBLIC_PHOENIX_RISE_URL || 'https://phoenix-rise.streamlit.app',
       };
 
       // Génération URL SSO sécurisée
       const ssoUrl = await this.generateSecureSSO_URL(ssoUserData, app, urls[app]);
-      
+
       // Redirection avec tracking
       this.trackCrossAppNavigation(app, ssoUserData.user_id);
       window.location.href = ssoUrl;
-      
     } catch (error) {
       console.error(`Erreur redirection SSO vers ${app}:`, error);
       throw error;
@@ -216,7 +220,11 @@ export class PhoenixWebsiteAuth {
   }
 
   // Génération URL SSO sécurisée (compatible avec phoenix_sso.py)
-  private async generateSecureSSO_URL(userData: any, targetApp: string, baseUrl: string): Promise<string> {
+  private async generateSecureSSO_URL(
+    userData: any,
+    targetApp: string,
+    baseUrl: string,
+  ): Promise<string> {
     try {
       // Appel au service n8n pour génération token SSO
       const response = await fetch('/api/sso/generate-token', {
@@ -225,8 +233,8 @@ export class PhoenixWebsiteAuth {
         body: JSON.stringify({
           user_data: userData,
           target_app: targetApp,
-          expires_hours: 1
-        })
+          expires_hours: 1,
+        }),
       });
 
       if (!response.ok) {
@@ -234,17 +242,18 @@ export class PhoenixWebsiteAuth {
       }
 
       const { sso_token } = await response.json();
-      
+
       // Construction URL avec token
       const ssoUrl = `${baseUrl}?phoenix_auth=${sso_token}&source=website_sso`;
-      
+
       return ssoUrl;
-      
     } catch (error) {
       console.error('Erreur génération URL SSO:', error);
-      
+
       // Fallback vers ancienne méthode
-      const fallbackToken = await this.generateCrossAppToken(targetApp);
+      const fallbackToken = await this.generateCrossAppToken(
+        targetApp as 'letters' | 'cv' | 'rise',
+      );
       return `${baseUrl}?phoenix_token=${fallbackToken}&source=website`;
     }
   }
@@ -253,11 +262,11 @@ export class PhoenixWebsiteAuth {
   private trackCrossAppNavigation(targetApp: string, userId: string): void {
     try {
       // Event tracking pour analytics
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'cross_app_navigation', {
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'cross_app_navigation', {
           target_app: targetApp,
           user_id: userId,
-          source: 'phoenix_website'
+          source: 'phoenix_website',
         });
       }
     } catch (error) {

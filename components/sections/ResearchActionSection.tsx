@@ -124,13 +124,18 @@ export default function ResearchActionSection() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href={(process.env.NEXT_PUBLIC_PHOENIX_CV_URL || 'https://phoenix-cv.streamlit.app')}
+                  href={
+                    process.env.NEXT_PUBLIC_PHOENIX_CV_URL || 'https://phoenix-cv.streamlit.app'
+                  }
                   className="px-6 py-3 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-300"
                 >
                   Essayer Phoenix CV
                 </a>
                 <a
-                  href={(process.env.NEXT_PUBLIC_PHOENIX_LETTERS_URL || 'https://phoenix-letters.streamlit.app')}
+                  href={
+                    process.env.NEXT_PUBLIC_PHOENIX_LETTERS_URL ||
+                    'https://phoenix-letters.streamlit.app'
+                  }
                   className="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-indigo-600 transition-colors duration-300"
                 >
                   Essayer Phoenix Letters

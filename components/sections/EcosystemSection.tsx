@@ -61,7 +61,10 @@ export default function EcosystemSection() {
                   Analyse de compatibilité offre/profil
                 </li>
               </ul>
-              <Link href={process.env.NEXT_PUBLIC_PHOENIX_CV_URL || 'https://phoenix-cv.streamlit.app/'} target="_blank">
+              <Link
+                href={process.env.NEXT_PUBLIC_PHOENIX_CV_URL || 'https://phoenix-cv.streamlit.app/'}
+                target="_blank"
+              >
                 <Button className="w-full bg-blue-500 hover:bg-blue-600">Tester Phoenix CV</Button>
               </Link>
             </CardContent>
@@ -98,7 +101,13 @@ export default function EcosystemSection() {
                   Coaching intégré
                 </li>
               </ul>
-              <Link href={process.env.NEXT_PUBLIC_PHOENIX_LETTERS_URL || 'https://phoenix-letters.streamlit.app/'} target="_blank">
+              <Link
+                href={
+                  process.env.NEXT_PUBLIC_PHOENIX_LETTERS_URL ||
+                  'https://phoenix-letters.streamlit.app/'
+                }
+                target="_blank"
+              >
                 <Button className="w-full bg-orange-500 hover:bg-orange-600">
                   Tester Phoenix Letters
                 </Button>

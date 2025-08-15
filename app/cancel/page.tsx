@@ -18,7 +18,13 @@ export default function CancelPage() {
         </p>
 
         <div className="space-y-4">
-          <Link href={process.env.NEXT_PUBLIC_PHOENIX_LETTERS_URL || 'https://phoenix-letters.streamlit.app/'} target="_blank">
+          <Link
+            href={
+              process.env.NEXT_PUBLIC_PHOENIX_LETTERS_URL ||
+              'https://phoenix-letters.streamlit.app/'
+            }
+            target="_blank"
+          >
             <Button className="w-full bg-orange-600 hover:bg-orange-700">
               Tester Phoenix Letters Gratuit
               <ArrowRight className="ml-2 h-4 w-4" />

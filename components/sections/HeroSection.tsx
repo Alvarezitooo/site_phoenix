@@ -35,7 +35,11 @@ export default function HeroSection() {
               className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-lg px-8 py-4 h-auto"
               asChild
             >
-              <a href="https://phoenix-letters.streamlit.app/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://phoenix-letters.streamlit.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Sparkles className="mr-2 h-5 w-5" />
                 Essayer Phoenix Letters GRATUIT
                 <ArrowRight className="ml-2 h-5 w-5" />

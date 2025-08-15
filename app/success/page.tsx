@@ -19,7 +19,13 @@ export default function SuccessPage() {
         </p>
 
         <div className="space-y-4">
-          <Link href={process.env.NEXT_PUBLIC_PHOENIX_LETTERS_URL || 'https://phoenix-letters.streamlit.app/'} target="_blank">
+          <Link
+            href={
+              process.env.NEXT_PUBLIC_PHOENIX_LETTERS_URL ||
+              'https://phoenix-letters.streamlit.app/'
+            }
+            target="_blank"
+          >
             <Button className="w-full bg-green-600 hover:bg-green-700">
               Accéder à Phoenix Letters Premium
               <ArrowRight className="ml-2 h-4 w-4" />
